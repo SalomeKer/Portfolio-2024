@@ -1,0 +1,526 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+.instrument-serif-regular {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.instrument-serif-regular-italic {
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+.libre-caslon-display-regular {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.spacing{
+    height: 600px;
+    width: 100%;
+}
+
+/* Body Styles */
+body {
+    background-color: black;
+    color: white;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+h2{
+    font-size: 110px;
+    font-family: "ivypresto-display", serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+h5{
+    font-size: 110px;
+    font-family: "ivypresto-display", serif;
+    font-weight: 100;
+    font-style: italic; 
+  
+}
+
+h3{
+    font-size: 70px;
+    font-family: "ivypresto-display", serif;
+    font-weight: 100;
+    font-style: normal;
+  
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+/* Navigation Styles */
+nav {
+    display: flex;
+    width: 100%;
+    top: 0px;
+    background-color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    z-index: 999;
+}
+
+.nav-menu {
+  transition: top 0.3s ease; /* Ajoute une transition douce à la propriété top */
+}
+
+h4{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.about-me{
+  margin: auto;
+  text-align: center;
+  max-width: 40%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+
+.projet, .salome, .contact {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.container1 {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s, transform 1s;
+}
+
+.container1.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-me {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.about-me.show {
+  opacity: 1;
+}
+
+
+
+
+input[type=radio] {
+    display: none;
+  }
+  
+  .card {
+    position: absolute;
+    width: 600px;
+    height: 365px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: transform .4s ease;
+    cursor: pointer;
+    justify-content: center;
+  }
+  
+  .container {
+    margin-top: 80px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 800px;
+    max-height: 600px;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+  
+  }
+  
+  img, video {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  #item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2 {
+    transform: translatex(-40%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+  }
+  
+  #item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
+    transform: translatex(40%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+  }
+  
+  #item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
+    transform: translatex(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+    
+    img {
+      box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+    }
+  }
+
+  .overlay{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+  }
+
+  .text-content {
+    display: none;
+    text-align: center; /* Ajout de cette ligne */
+}
+
+.card.active .text-content {
+    display: block;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  max-width: 600px; /* Largeur maximale pour le texte */
+}
+
+.text .line {
+  margin-bottom: 20px; /* Espacement entre chaque ligne */
+}
+
+.text p {
+  font-size: 100px;
+  margin: 0; /* Supprimer les marges par défaut */
+}
+
+.container1 .text {
+    line-height: 1; /* Réglez cette valeur selon votre préférence */
+  }
+
+.image {
+  display: inline-block; /* Pour que l'image soit sur la même ligne */
+  vertical-align: middle; /* Aligner verticalement par rapport au texte */
+  margin-right: 10px; /* Espacement entre l'image et le mot "univers" */
+}
+
+
+
+.container1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: 15px;
+  }
+  
+  .text {
+    max-width: 800px; /* Largeur maximale pour le texte */
+    align-items: center;
+    text-align: center;
+  }
+  
+  .text .line {
+    margin-bottom: 20px; /* Espacement entre chaque ligne */
+  }
+  
+  .text p {
+    font-size: 100px;
+    margin: 0; /* Supprimer les marges par défaut */
+  }
+  
+  .image {
+    display: inline-block; /* Pour que l'image soit sur la même ligne */
+    vertical-align: middle; /* Aligner verticalement par rapport au texte */
+    margin-right: 10px; /* Espacement entre l'image et le mot "univers" */
+    width: 211px;
+    height: 116px;
+  }
+  .image h2 {
+    font-style: italic;
+    font-weight: 200;
+  }
+  
+  .line img{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+  }
+  
+
+  
+
+*********************************************************/*Nav*/
+.nav-menu {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.contact {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.projet {
+  font-size: 16px;
+}
+
+.menu-icon {
+  display: none;
+  width: 40px;
+  height: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  margin: 6px auto;
+  transition: all 0.3s ease;
+}
+
+.menu-icon.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.menu-icon.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-9px, -6px);
+}
+
+.menu-icon:hover .bar {
+  background-color: #ccc;
+}
+
+.mobile-links {
+  display: none;
+}
+
+/* Ajout pour les appareils mobiles */
+@media screen and (max-width: 957px) {
+
+  .text h2, h5 {
+    font-size: 90px; /* Réduire la taille de la police pour les appareils plus petits */
+  }
+  .about-me{
+    font-size: 17px;
+    max-width: 60%;
+  }
+  .image{
+    width: 180px;
+    height: 100px;
+  }
+  .card {
+    width: 450px;
+    height: 275px;
+  }
+  .menu-icon {
+      display: block;
+  }
+
+  .nav-menu{
+    display: none;
+  }
+
+  .mobile-links {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100vh;
+      background-color: black;
+      z-index: 999;
+      padding-top: 60px; /* Ajustez en fonction de la hauteur du menu burger */
+      transition: all 0.3s ease;
+  }
+
+  a{
+    text-align: center;
+    margin: none;
+  }
+  .projet, .contact {
+    font-size: 25px;
+    padding: 15px;
+  }
+}
+.mobile-links.active {
+  left: 0;
+}
+
+
+
+@media screen and (max-width: 758px) {
+
+  .text h2, h5 {
+    font-size: 60px; /* Réduire la taille de la police pour les appareils plus petits */
+  }
+  .about-me{
+    font-size: 17px;
+    max-width: 70%;
+  }
+  .image{
+    width: 100px;
+    height: 56px;
+  }
+  .card {
+    width: 300px;
+    height: 183px;
+  }
+  h3{
+  font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  body{
+    padding: 20px;
+    padding-right: 20px;
+  }
+
+  .text h2, h5 {
+    font-size: 50px; /* Réduire la taille de la police pour les appareils plus petits */
+  }
+  .about-me{
+    font-size: 15px;
+    max-width: 70%;
+  }
+  .image{
+    width: 100px;
+    height: 56px;
+  }
+  .card {
+    width: 250px;
+    height: 153px;
+  }
+  h3{
+  font-size: 40px;
+  }
+  h4{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 433px) {
+  body{
+    padding: 15px;
+    padding-right: 15px;
+  }
+
+  .text h2, h5 {
+    font-size: 40px; /* Réduire la taille de la police pour les appareils plus petits */
+  }
+  .about-me{
+    font-size: 15px;
+    max-width: 70%;
+  }
+  .image{
+    width: 100px;
+    height: 56px;
+  }
+  .card {
+    width: 200px;
+    height: 122px;
+  }
+  h3{
+  font-size: 40px;
+  }
+  h4{
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  body{
+    padding: 15px;
+    padding-right: 15px;
+  }
+
+  .text h2, h5 {
+    font-size: 40px; /* Réduire la taille de la police pour les appareils plus petits */
+  }
+  .about-me{
+    font-size: 15px;
+    max-width: 70%;
+  }
+  .image{
+    width: 70px;
+    height: 36px;
+  }
+  .card {
+    width: 150px;
+    height: 90px;
+  }
+  h3{
+  font-size: 30px;
+  }
+  h4{
+    font-size: 10px;
+  }
+}
